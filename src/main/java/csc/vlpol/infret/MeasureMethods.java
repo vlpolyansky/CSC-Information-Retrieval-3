@@ -71,5 +71,5 @@ public class MeasureMethods {
     }
 
     private static final double pBreak = 0.15;
-    private static final int maxRel = 3;
+    private static final int maxRel = 4;
 }

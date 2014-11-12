@@ -29,10 +29,11 @@ public class MeasureMethods {
 
     public static double pfound(int[] scores) {
         double pLook = 1.0;
-        double pfound = pLook * pRel(scores[0], maxRel);
+        double pRel = pRel(scores[0], maxRel);
+        double pfound = pLook * pRel;
         for (int i = 1; i < scores.length; ++i) {
-            double pRel = pRel(scores[i], maxRel);
             pLook *= (1 - pRel) * (1 - pBreak);
+            pRel = pRel(scores[i], maxRel);
             pfound += pLook * pRel;
         }
         return pfound;
@@ -71,5 +72,5 @@ public class MeasureMethods {
     }
 
     private static final double pBreak = 0.15;
-    private static final int maxRel = 4;
+    private static final int maxRel = 3;
 }
